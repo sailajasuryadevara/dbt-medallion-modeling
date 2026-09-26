@@ -1,0 +1,78 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: >-
+      Bronze layer. One row per customer, lightly cleaned from the
+      raw_customers seed: dates cast, updated_at backfilled from
+      signup_date for the SCD2 snapshot.
+    columns:
+      - name: customer_id
+        description: Primary key of the customer.
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: Customer first name.
+      - name: last_name
+        description: Customer last name.
+      - name: email
+        description: Customer email address.
+      - name: city
+        description: Customer city.
+      - name: state
+        description: Customer state (US postal abbreviation).
+      - name: signup_date
+        description: Date the customer signed up.
+      - name: updated_at
+        description: >-
+          Last-modified timestamp driving the SCD2 snapshot. Backfilled
+          from signup_date in this synthetic extract.
+
+  - name: stg_orders
+    description: >-
+      Bronze layer. One row per order, lightly cleaned from the
+      raw_orders seed: price converted to dollars, status lowercased.
+    columns:
+      - name: order_id
+        description: Primary key of the order.
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: Customer who placed the order. References dim_customers.
+        tests:
+          - not_null
+      - name: product_id
+        description: Product purchased. References dim_products.
+        tests:
+          - not_null
+      - name: quantity
+        description: Number of units purchased.
+      - name: unit_price_dollars
+        description: Unit price in dollars (converted from cents).
+      - name: order_date
+        description: Date the order was placed.
+      - name: status
+        description: Order status.
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['completed', 'refunded', 'cancelled']
+
+  - name: stg_products
+    description: >-
+      Bronze layer. One row per product, lightly cleaned from the
+      raw_products seed: price converted to dollars.
+    columns:
+      - name: product_id
+        description: Primary key of the product.
+        tests:
+          - unique
+          - not_null
+      - name: product_name
+        description: Product display name.
+      - name: category
+        description: Product category.
+      - name: unit_price_dollars
+        description: Current unit price in dollars (converted from cents).

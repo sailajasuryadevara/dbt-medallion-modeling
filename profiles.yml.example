@@ -1,0 +1,26 @@
+# Copy this file to `profiles.yml` (same directory) before running dbt.
+# `profiles.yml` is gitignored -- only this example is committed.
+# No real credentials are stored in this project.
+retail_medallion:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: retail.duckdb
+      schema: main
+      threads: 4
+
+    # ------------------------------------------------------------------
+    # Production target (Snowflake) -- placeholders only.
+    # Uncomment and fill in real values to run against Snowflake.
+    # ------------------------------------------------------------------
+    # prod:
+    #   type: snowflake
+    #   account: <ACCOUNT>        # e.g. xy12345.us-east-1
+    #   user: <USER>
+    #   password: <PASSWORD>      # or: private_key_path / authenticator
+    #   role: <ROLE>
+    #   database: <DATABASE>
+    #   warehouse: <WAREHOUSE>
+    #   schema: <SCHEMA>
+    #   threads: 8

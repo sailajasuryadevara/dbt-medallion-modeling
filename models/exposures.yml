@@ -1,0 +1,16 @@
+version: 2
+
+exposures:
+  - name: executive_revenue_dashboard
+    label: Executive Revenue Dashboard
+    type: dashboard
+    maturity: high
+    url: https://example.com/dashboards/executive-revenue
+    description: >-
+      Executive view of revenue by day, category and state, powered by
+      fct_orders joined to the customer and product dimensions.
+    depends_on:
+      - ref('fct_orders')
+    owner:
+      name: Data Engineering
+      email: data-eng@example.com

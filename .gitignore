@@ -1,0 +1,17 @@
+# dbt build artifacts
+target/
+dbt_packages/
+logs/
+
+# local DuckDB files
+*.duckdb
+*.duckdb.wal
+
+# secrets / local config
+.env
+profiles.yml
+# (keep profiles.yml.example -- it is committed)
+
+# python
+__pycache__/
+.venv/

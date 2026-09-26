@@ -1,0 +1,13 @@
+product_id,product_name,category,unit_price_cents
+PROD-01,Aurora Wireless Headphones,Electronics,12999
+PROD-02,Nimbus Mechanical Keyboard,Electronics,8999
+PROD-03,Vertex 4K Monitor 27in,Electronics,34999
+PROD-04,Trailhead Hiking Backpack,Sports,7499
+PROD-05,Meridian Running Shoes,Sports,11999
+PROD-06,Solstice Yoga Mat Pro,Sports,3499
+PROD-07,Harbor Ceramic Pour-Over Set,Home & Kitchen,4599
+PROD-08,Ember Cast Iron Skillet 12in,Home & Kitchen,5499
+PROD-09,Northwind Denim Jacket,Apparel,9899
+PROD-10,Cascade Merino Hoodie,Apparel,7999
+PROD-11,Atlas Data Engineering Handbook,Books,3999
+PROD-12,Lumen Desk Lamp,Home & Kitchen,5999

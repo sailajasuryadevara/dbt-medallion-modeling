@@ -1,0 +1,59 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: >-
+      Gold layer. Grain: one row per customer. Type-1 customer attributes
+      plus lifetime order aggregates. Slowly changing history is tracked
+      separately by customers_snapshot (SCD2).
+    columns:
+      - name: customer_id
+        description: Primary key of the customer dimension.
+        tests:
+          - unique
+          - not_null
+      - name: total_orders
+        description: Count of all orders placed by the customer (any status).
+      - name: lifetime_revenue
+        description: Sum of line_revenue over completed orders only.
+
+  - name: dim_products
+    description: >-
+      Gold layer. Grain: one row per product. Current product attributes
+      and price.
+    columns:
+      - name: product_id
+        description: Primary key of the product dimension.
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_orders
+    description: >-
+      Gold layer. Grain: one row per order line (order_id is the line key
+      because the source emits one product per order row). Core measures
+      are quantity, unit_price_dollars and line_revenue.
+    columns:
+      - name: order_id
+        description: Primary key of the fact (one row per order line).
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: Foreign key to dim_customers.customer_id.
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_customers')
+                field: customer_id
+      - name: product_id
+        description: Foreign key to dim_products.product_id.
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_products')
+                field: product_id
+      - name: line_revenue
+        description: quantity * unit_price_dollars for the line.

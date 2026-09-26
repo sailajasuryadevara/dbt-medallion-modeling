@@ -1,0 +1,2 @@
+# dbt-duckdb pulls in a compatible dbt-core automatically.
+dbt-duckdb>=1.7

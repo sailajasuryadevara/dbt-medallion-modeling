@@ -1,0 +1,21 @@
+customer_id,first_name,last_name,email,city,state,signup_date
+CUST-1001,Ava,Patel,ava.patel1001@example.com,Austin,TX,2024-10-30
+CUST-1002,Liam,Garcia,liam.garcia1002@example.com,Chicago,IL,2023-05-09
+CUST-1003,Maya,Kim,maya.kim1003@example.com,Seattle,WA,2023-02-09
+CUST-1004,Noah,Nguyen,noah.nguyen1004@example.com,Denver,CO,2025-02-12
+CUST-1005,Priya,Sharma,priya.sharma1005@example.com,Miami,FL,2023-10-23
+CUST-1006,Ethan,Johnson,ethan.johnson1006@example.com,Portland,OR,2023-09-22
+CUST-1007,Sofia,Rossi,sofia.rossi1007@example.com,Boston,MA,2023-08-31
+CUST-1008,Lucas,Silva,lucas.silva1008@example.com,Nashville,TN,2023-06-06
+CUST-1009,Amara,Okafor,amara.okafor1009@example.com,Phoenix,AZ,2025-02-07
+CUST-1010,James,Brown,james.brown1010@example.com,Minneapolis,MN,2023-04-29
+CUST-1011,Nina,Weber,nina.weber1011@example.com,Atlanta,GA,2024-12-07
+CUST-1012,Omar,Haddad,omar.haddad1012@example.com,San Diego,CA,2025-02-11
+CUST-1013,Elena,Petrova,elena.petrova1013@example.com,Detroit,MI,2024-07-26
+CUST-1014,David,Lee,david.lee1014@example.com,Raleigh,NC,2023-04-14
+CUST-1015,Rosa,Morales,rosa.morales1015@example.com,St. Louis,MO,2024-09-10
+CUST-1016,Kai,Tanaka,kai.tanaka1016@example.com,Tampa,FL,2024-03-22
+CUST-1017,Tara,Iyer,tara.iyer1017@example.com,Columbus,OH,2023-02-16
+CUST-1018,Victor,Lindqvist,victor.lindqvist1018@example.com,Sacramento,CA,2023-02-14
+CUST-1019,June,Park,june.park1019@example.com,Kansas City,MO,2023-04-20
+CUST-1020,Felix,Novak,felix.novak1020@example.com,Madison,WI,2023-08-26
